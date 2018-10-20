@@ -1,5 +1,6 @@
 package edu.ycp.cs320.cteichmann.persist;
 
+import javafx.scene.paint.Color;
 import java.util.List;
 
 public class Tile {
@@ -25,6 +26,10 @@ public class Tile {
 
     public int getB(){
         return b;
+    }
+
+    public Color getColor(){
+        return new Color(this.r/255.0,this.g/255.0,this.b/255.0, 1);
     }
 
     public Tile compareTile(List<Tile> tileSet){
