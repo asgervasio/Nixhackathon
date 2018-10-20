@@ -23,7 +23,10 @@ import java.awt.image.SampleModel;
 
 
 public class javaFX extends Application{
-    
+
+    Button button;
+    String sampleLoc = "";
+    String standardLoc = "";
 
     Scene homeScene, scene2;
 
@@ -82,6 +85,7 @@ public class javaFX extends Application{
 
         /*******************SCENE 2************************************/
         Button button2 = new Button("GO BACK");
+        button2.setOnAction(e -> primaryStage.setScene(homeScene));
         Label fileLocLabel = new Label();
         Label standardLocLabel = new Label();
 
@@ -96,9 +100,6 @@ public class javaFX extends Application{
             standardLocLabel.setText(standardField.getText());
             primaryStage.setScene(scene2);
         });
-
-        button2.setOnAction(e -> primaryStage.setScene(homeScene));
-
     }
 
     public HBox addHBox() {
@@ -117,4 +118,58 @@ public class javaFX extends Application{
 
         return hbox;
     }
+
+    public void setSampleLoc(String loc){
+        this.sampleLoc = loc;
+    }
+
+    public String getSampleLoc(){
+        return this.sampleLoc;
+    }
+/*
+    public Scene homeScreen(){
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        Text scenetitle = new Text("Grease Thief");
+        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        grid.add(scenetitle, 0, 0, 2, 1);
+
+        Label locLabel = new Label("Sample Location:");
+        grid.add(locLabel, 0, 1);
+
+        TextField locField = new TextField();
+        grid.add(locField, 1, 1);
+
+
+        Label standardLabel = new Label("Standards:");
+        grid.add(standardLabel, 0, 2);
+
+        TextField standardField = new TextField();
+        grid.add(standardField, 1, 2);
+
+        Button submitButton = new Button("Submit");
+        HBox hbButton = new HBox(10);
+        hbButton.setAlignment(Pos.BOTTOM_RIGHT);
+        hbButton.getChildren().add(submitButton);
+        grid.add(hbButton, 1, 4);
+
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent e) {
+                sampleLoc = locField.getText();
+                standardLoc = standardField.getText();
+            }
+        });
+
+
+        Scene scene = new Scene(grid, 300, 275);
+        return scene;
+    }
+    */
+
 }
