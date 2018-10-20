@@ -14,13 +14,8 @@ public class NixMain {
             System.out.println(returnString.get(12));
             System.out.println(returnString.get(13));
             System.out.println(returnString.get(14));
-
         }
-
-
         catch (Exception e){
-
         }
     }
-
 }
