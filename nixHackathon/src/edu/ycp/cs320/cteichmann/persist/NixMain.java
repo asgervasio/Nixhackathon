@@ -13,29 +13,40 @@ public class NixMain {
             ReadCSV rcsv = new ReadCSV("ye_colordata.csv");
             rcsv.next();
             List<String> returnString = rcsv.next();
-            System.out.println(returnString.get(12));
-            System.out.println(returnString.get(13));
-            System.out.println(returnString.get(14));
+            int red = Integer.parseInt(returnString.get(12).replaceAll("[\\D]",""));
+            int green = Integer.parseInt(returnString.get(13).replaceAll("[\\D]",""));
+            int blue = Integer.parseInt(returnString.get(14).replaceAll("[\\D]",""));
+
+            Tile sampleTile = new Tile(-1,red, green, blue);
+
 
             List<Tile> tileList = new ArrayList<>();
             List<String> tileInfo = new ArrayList<>();
             ReadTileCSV tileCSV = new ReadTileCSV("Tiles.csv");
-            for(int count = 0; count < 30; count++){
+            for(int count = 0; count < 40; count++){
                 tileInfo = tileCSV.next();
-                System.out.println(tileInfo.get(0));
                 List<String> splitString = Arrays.asList(tileInfo.get(0).split(","));
+                int id = Integer.parseInt(splitString.get(0).replaceAll("[\\D]",""));
+                int r = Integer.parseInt(splitString.get(1).replaceAll("[\\D]",""));
+                int g = Integer.parseInt(splitString.get(2).replaceAll("[\\D]",""));
+                int b = Integer.parseInt(splitString.get(3).replaceAll("[\\D]",""));
 
-                int id = Integer.parseInt(splitString.get(0));
-                int r = Integer.parseInt(splitString.get(1));
-                int g = Integer.parseInt(splitString.get(2));
-                int b = Integer.parseInt(splitString.get(3));
                 Tile newTile = new Tile(id, r ,g, b);
 
                 tileList.add(newTile);
             }
 
+            Tile returnTile = sampleTile.compareTile(tileList);
+
+            System.out.println(returnTile.getId());
+            System.out.println(returnTile.getR());
+            System.out.println(returnTile.getG());
+            System.out.println(returnTile.getB());
+
         }
         catch (Exception e){
         }
     }
+
+
 }
