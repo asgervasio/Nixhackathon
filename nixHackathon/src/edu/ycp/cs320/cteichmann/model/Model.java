@@ -3,40 +3,31 @@ package edu.ycp.cs320.cteichmann.model;
 import edu.ycp.cs320.cteichmann.model.Model;
 
 public class Model {
-	private int accountID;
-	private String userName;
-	private String password;
-	private int favoriteID;
-
+	private int RedValue, GreenValue, BlueValue;
 	public Model(){
 
 	}
-	// GET and SET accountID
-	public int getAccountID() {
-		return this.accountID;
+	// GET and SET RedValue
+	public int getRedValue() {
+		return this.RedValue;
 	}
-	public void setAccountID(int accountID) {
-		this.accountID = accountID;
+	public void setRedValue(int RedValue) {
+		this.RedValue = RedValue;
 	}
-	// GET and SET userName
-	public String getUserName() {
-		return this.userName;
+	
+	// GET and SET RedValue
+	public int getBlueValue() {
+		return this.BlueValue;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setRedValue(int BlueValue) {
+		this.BlueValue = BlueValue;
 	}
-	// GET and SET Password
-	public String getPassword() {
-		return this.password;
+	
+	// GET and SET RedValue
+	public int getGreenValue() {
+		return this.GreenValue;
 	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	//GET and SET Favorite favorite
-	public int getFavoriteID() {
-		return this.favoriteID;
-	}
-	public void setFavoriteID(int favoriteID) {
-		this.favoriteID = favoriteID;
+	public void setGreenValue(int GreenValue) {
+		this.GreenValue = GreenValue;
 	}
 }
