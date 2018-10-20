@@ -15,11 +15,10 @@ public class NixMain {
             int red = Integer.parseInt(returnString.get(12).replaceAll("[\\D]", ""));
             int green = Integer.parseInt(returnString.get(13).replaceAll("[\\D]", ""));
             int blue = Integer.parseInt(returnString.get(14).replaceAll("[\\D]", ""));
-
             sampleTile = new Tile(-1, red, green, blue);
         }
         catch(Exception e){
-
+            System.out.println("Exception Caught in ReadSampleSwatch Method");
         }
         return sampleTile;
     }
@@ -29,7 +28,7 @@ public class NixMain {
 
         try{
             List<String> tileInfo;
-            ReadTileCSV tileCSV = new ReadTileCSV("Tiles.csv");
+            ReadTileCSV tileCSV = new ReadTileCSV("Grease.csv");
             for(int count = 0; count < 40; count++){
                 tileInfo = tileCSV.next();
                 List<String> splitString = Arrays.asList(tileInfo.get(0).split(","));
@@ -63,7 +62,10 @@ public class NixMain {
             int blue = Integer.parseInt(returnString.get(14).replaceAll("[\\D]",""));
 
             Tile sampleTile = new Tile(-1,red, green, blue);
-
+            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+            System.out.println("NIX Sample Data");
+            System.out.println("R:"+sampleTile.getR()+ " G:"+sampleTile.getG()+ " B:"+sampleTile.getB());
+            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
             List<Tile> tileList = new ArrayList<>();
             List<String> tileInfo = new ArrayList<>();
             /*
@@ -96,12 +98,14 @@ public class NixMain {
 
                 Tile newTile = new Tile(id, r ,g, b);
                 tileList.add(newTile);
+                /*  //TESTING ALL PARAMETERS OF STANDARD TILES
                 System.out.println("ID: "+id);
                 System.out.println("R: "+r+",G: "+g+",B: "+b);
                 System.out.println(colorName);
                 System.out.println(IronContent);
                 System.out.println(Description);
                 System.out.println("***************************************************************************************************************");
+            */
             }
             Tile returnTile = sampleTile.compareTile(tileList);
 

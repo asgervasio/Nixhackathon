@@ -69,6 +69,11 @@ public class Tile {
                 lowestDelta = delta;
             }
         }
+        System.out.println("#################################################");
+        System.out.println("Closest Tile");
+        System.out.println("R:"+closestTile.getR()+ " G:"+closestTile.getG()+ " B:"+closestTile.getB());
+        System.out.println("Percent Match:"+lowestDelta);
+        System.out.println("#################################################");
         return closestTile;
     }
 
