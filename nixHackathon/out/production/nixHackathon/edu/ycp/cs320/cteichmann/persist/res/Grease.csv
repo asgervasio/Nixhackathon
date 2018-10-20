@@ -1,0 +1,6 @@
+1,255,255,255, "White", "0% Iron", "Grease is in good condition"
+2,187,188,192, "Grey", "0.0% - 0.1% Iron", "Grease is in good condition. Normal Wear in bearing"
+3,249,194,137, "Tan", "0.1% - 0.4% Iron", "Add grease until cavity is full, Bearing condition is OK"
+4,192,139,87, "Brown", "0.4% - 0.8% Iron", "Flush Bearing with Grease. Check bearing for excess wear"
+5,78,40,21, "Dark Brown", "0.8% and higher", "Check bearing for play and noise. If bearing is OK flush with grease. If bearing is worn schedule bearing replacement"
+6,35,31,32, "Black", "Greater than 2% Iron", "Replace Bearing"

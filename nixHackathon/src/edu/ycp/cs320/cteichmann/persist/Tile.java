@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Tile {
     int id, r, g, b;
+    String colorName, ironContent, Description;
     public Tile(int id, int r, int g, int b){
         this.id = id;
         this.r = r;
@@ -27,9 +28,27 @@ public class Tile {
     public int getB(){
         return b;
     }
-
     public Color getColor(){
         return new Color(this.r/255.0,this.g/255.0,this.b/255.0, 1);
+    }
+
+    public void setColorName(String color){
+        this.colorName = color;
+    }
+    public String getColorName(){
+        return colorName;
+    }
+    public void setIronContent(String ironContent){
+        this.ironContent = ironContent;
+    }
+    public String getIronContent(){
+        return ironContent;
+    }
+    public void setDescription(String Description){
+        this.Description = Description;
+    }
+    public String getDescription(){
+        return Description;
     }
 
     public Tile compareTile(List<Tile> tileSet){
@@ -49,7 +68,6 @@ public class Tile {
                 closestTile = curTile;
                 lowestDelta = delta;
             }
-
         }
         return closestTile;
     }
