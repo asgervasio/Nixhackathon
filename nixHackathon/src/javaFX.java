@@ -24,8 +24,6 @@ import java.util.List;
 
 
 public class javaFX extends Application{
-
-
     Scene homeScene, scene2;
     NixMain nix = new NixMain();
     Tile sampleTile;
@@ -57,12 +55,12 @@ public class javaFX extends Application{
     @Override
     public void start(Stage primaryStage) {
         NixMain nx = new NixMain();
-        primaryStage.setTitle("CarChecker");
+        primaryStage.setTitle("Grease Thief");
 
 
         /**************HOME SCENE************************************/
         GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
+                grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
@@ -99,9 +97,11 @@ public class javaFX extends Application{
         /*******************SCENE 2************************************/
         Button button2 = new Button("GO BACK");
         BorderPane border = new BorderPane();
-
+        border.setStyle("-fx-background-color: #9EEB71;");
         VBox layout2 = new VBox(20);
         HBox gradient = new HBox(10);
+        gradient.setAlignment(Pos.CENTER);
+        gradient.setPadding(new Insets(25,0,10,0));
 
 
         /**************************************************************/
@@ -121,14 +121,12 @@ public class javaFX extends Application{
         border.setTop(gradient);
         border.setLeft(layout2);
         scene2 = new Scene(border, 600, 300);
-
     }
 
     public void setSampleTile(String loc){
         sampleTile = nix.readSampleSwatch(loc);
         sampleSwatch.setFill(sampleTile.getColor());
         sampleRGB.setText("R: "+ sampleTile.getR() + " G: " + sampleTile.getG() + " B: " + sampleTile.getB());
-        System.out.println(sampleTile.getR());
     }
 
     public void setStandardTile(){
@@ -140,9 +138,6 @@ public class javaFX extends Application{
         standardSwatchBrown     .setFill(standardList.get(3).getColor());
         standardSwatchDarkBrown .setFill(standardList.get(4).getColor());
         standardSwatchBlack     .setFill(standardList.get(5).getColor());
-
-        sampleRGB.setText("R: "+ sampleTile.getR() + " G: " + sampleTile.getG() + " B: " + sampleTile.getB());
-        System.out.println(sampleTile.getR());
     }
 
     public Tile loadTile(String loc){
