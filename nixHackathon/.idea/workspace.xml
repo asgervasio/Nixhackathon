@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96eb96f3-89a3-4c85-b8d7-c967fd277949" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/greasethief.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/hackathon/greaseThief/res/Grease.csv" afterPath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/hackathon/greaseThief/res/Grease.csv" />
       <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/javaFX.class" afterPath="$PROJECT_DIR$/out/production/nixHackathon/javaFX.class" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Grease.csv" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Grease.csv" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Transmission.csv" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Transmission.csv" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/both_colordata.csv" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/both_colordata.csv" />
       <change beforePath="$PROJECT_DIR$/src/javaFX.java" afterPath="$PROJECT_DIR$/src/javaFX.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -56,11 +57,41 @@
       <file leaf-file-name="javaFX.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javaFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="163" column="34" lean-forward="false" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tran_colordata.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Tran_colordata.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="both_colordata.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/both_colordata.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transmission.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Transmission.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,8 +123,8 @@
       <file leaf-file-name="NixMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="71" column="50" lean-forward="false" selection-start-line="71" selection-start-column="50" selection-end-line="71" selection-end-column="50" />
+            <state relative-caret-position="2625">
+              <caret line="114" column="14" lean-forward="true" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,13 +132,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ReadTileCSV.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/ReadTileCSV.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="15" column="114" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2775">
-              <caret line="111" column="20" lean-forward="false" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
+            <state relative-caret-position="3800">
+              <caret line="152" column="20" lean-forward="false" selection-start-line="152" selection-start-column="20" selection-end-line="152" selection-end-column="20" />
               <folding>
-                <marker date="1540100457660" expanded="true" signature="46560:46577" ph="..." />
+                <marker date="1540108251189" expanded="true" signature="52566:52583" ph="..." />
               </folding>
             </state>
           </provider>
@@ -151,15 +192,16 @@
         <option value="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java" />
         <option value="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java" />
         <option value="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Grease.csv" />
+        <option value="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/both_colordata.csv" />
+        <option value="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Transmission.csv" />
         <option value="$PROJECT_DIR$/src/javaFX.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-238" />
-    <option name="y" value="-21" />
-    <option name="width" value="1704" />
-    <option name="height" value="1104" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1270" />
+    <option name="width" value="1300" />
+    <option name="height" value="1390" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -220,14 +262,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Chase\Documents\GitHub\Nixhackathon\nixHackathon\src\edu\ycp\cs320\cteichmann\persist\res" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Hackathon\Nixhackathon\nixHackathon\src\edu\ycp\hackathon\greaseThief\res" />
+      <recent name="C:\Hackathon\Nixhackathon\nixHackathon\src\edu\ycp\cs320\cteichmann\persist\res" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.ycp.cs320.cteichmann.persist" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Hackathon\Nixhackathon\nixHackathon\src\edu\ycp\cs320\cteichmann\persist\res" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Chase\Documents\GitHub\Nixhackathon\nixHackathon\src\edu\ycp\cs320\cteichmann\persist\res" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -448,8 +491,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="2582" height="1402" extended-state="6" />
-    <editor active="true" />
+    <frame x="1270" y="0" width="1300" height="1390" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -460,13 +502,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16152598" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16311476" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17226562" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25586855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -511,6 +553,46 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1827#1828#0" expanded="true" />
+            <element signature="e#1860#1861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Grease.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="39" column="58" lean-forward="true" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaFX.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -526,7 +608,7 @@
         <state relative-caret-position="1775">
           <caret line="71" column="20" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
           <folding>
-            <marker date="1540100457660" expanded="true" signature="46560:46577" ph="..." />
+            <marker date="1540108251189" expanded="true" signature="52566:52583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -581,7 +663,7 @@
         <state relative-caret-position="2625">
           <caret line="105" column="20" lean-forward="false" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
           <folding>
-            <marker date="1540100457660" expanded="true" signature="46560:46577" ph="..." />
+            <marker date="1540108251189" expanded="true" signature="52566:52583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -641,7 +723,7 @@
         <state relative-caret-position="1775">
           <caret line="71" column="20" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
           <folding>
-            <marker date="1540100457660" expanded="true" signature="46560:46577" ph="..." />
+            <marker date="1540108251189" expanded="true" signature="52566:52583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -660,13 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="623">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/ReadTileCSV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -693,10 +768,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2775">
-          <caret line="111" column="20" lean-forward="false" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
+        <state relative-caret-position="3800">
+          <caret line="152" column="20" lean-forward="false" selection-start-line="152" selection-start-column="20" selection-end-line="152" selection-end-column="20" />
           <folding>
-            <marker date="1540100457660" expanded="true" signature="46560:46577" ph="..." />
+            <marker date="1540108251189" expanded="true" signature="52566:52583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -713,16 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="71" column="50" lean-forward="false" selection-start-line="71" selection-start-column="50" selection-end-line="71" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Grease.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -731,10 +796,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="114" column="14" lean-forward="true" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/ReadTileCSV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="15" column="114" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Tran_colordata.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/both_colordata.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Transmission.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javaFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+        <state relative-caret-position="459">
+          <caret line="163" column="34" lean-forward="false" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

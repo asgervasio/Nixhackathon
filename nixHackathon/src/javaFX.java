@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -30,6 +32,7 @@ public class javaFX extends Application{
     private Label standardLocLabel          = new Label();
     private TextField standardLocTextField  = new TextField();
     private Button submitButton             = new Button();
+    private Image bgImage                   = new Image("edu/ycp/hackathon/greaseThief/res/greasethief.png");
 
     private Text sampleText                 = new Text();
     private Text matchText                  = new Text();
@@ -55,7 +58,7 @@ public class javaFX extends Application{
     public static void main(String[] args){
         launch(args);
     }
-
+//FAFAFA
     @Override
     public void start(Stage primaryStage) {
         NixMain nx = new NixMain();
@@ -64,6 +67,7 @@ public class javaFX extends Application{
 
         /**************HOME SCENE************************************/
         GridPane grid = new GridPane();
+
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
         grid.setVgap(10);
@@ -75,21 +79,22 @@ public class javaFX extends Application{
         grid.add(sceneTitle, 0, 0, 2, 1);
         GridPane.setHalignment(sceneTitle, HPos.CENTER);
 
-        sampleLocLable.setText("Sample Location: ");
+        sampleLocLable.setText("Nix Sample: ");
         sampleLocLable.setFont(Font.font("Tahoma", FontWeight.LIGHT, 30));
         grid.add(sampleLocLable, 0, 1);
-
+        GridPane.setHalignment(sampleLocLable, HPos.RIGHT);
 
         grid.add(sampleLocTextField, 1, 1);
 
 
-        standardLocLabel.setText("Standards: ");
+        standardLocLabel.setText("Quality Standards: ");
         standardLocLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 30));
         GridPane.setHalignment(standardLocLabel, HPos.RIGHT);
 
         grid.add(standardLocLabel, 0, 2);
 
         grid.add(standardLocTextField, 1, 2);
+       // grid.add(new ImageView(bgImage), 1,0);
 
         submitButton.setText("Submit");
         HBox hbButton = new HBox(10);
@@ -128,7 +133,7 @@ public class javaFX extends Application{
             matchSwatch.setFill(closest.getColor());
             matchRGB.setText("R: "+ closest.getR() + " G: " + closest.getG() + " B: " + closest.getB());
             matchRGB.setFont(Font.font("Tahoma", FontWeight.LIGHT, 30));
-            deltaMatch.setText("DeltaMatch: "    + String.valueOf(Math.round(sample.getDeltaMatch() * 100) / 10000.0));
+            deltaMatch.setText("Delta Match: "    + String.valueOf(Math.round(sample.getDeltaMatch() * 100) / 10000.0));
             deltaMatch.setFont(Font.font("Tahoma", FontWeight.LIGHT, 20));
             status.setText("Status: " + closest.getIronContent());
             status.setFont(Font.font("Tahoma", FontWeight.LIGHT, 20));
@@ -146,17 +151,17 @@ public class javaFX extends Application{
 
         button2.setOnAction(e -> primaryStage.setScene(homeScene));
 
-        gradientLabel.setText("Standard Set");
+        gradientLabel.setText("Quality Standard Set");
         gradientLabel.setFont(Font.font("Tahoma", FontWeight.BOLD, 30));
         gradient.setPadding(new Insets(10,0,0,0));
 
 
 
-        sampleText.setText("Sample");
+        sampleText.setText("Nix Sample");
         sampleText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 50));
 
 
-        matchText.setText("Match");
+        matchText.setText("Closest Match");
         matchText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 50));
         gradient.getChildren().addAll(standardSwatchWhite,standardSwatchGrey,standardSwatchTan,standardSwatchBrown,standardSwatchDarkBrown,standardSwatchBlack);
         topVBox.getChildren().addAll(gradientLabel, gradient);
