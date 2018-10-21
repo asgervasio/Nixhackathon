@@ -30,14 +30,16 @@ public class javaFX extends Application{
     NixMain nix = new NixMain();
     Tile sampleTile;
     List<Tile> standardList;
-    private Text sceneTitle         = new Text();
-    Label sampleLocLable            = new Label();
-    TextField sampleLocTextField    = new TextField();
-    Label standardLocLabel          = new Label();
-    TextField standardLocTextField  = new TextField();
-    Button submitButton             = new Button();
+    private Text sceneTitle                 = new Text();
+    private Label sampleLocLable            = new Label();
+    private TextField sampleLocTextField    = new TextField();
+    private Label standardLocLabel          = new Label();
+    private TextField standardLocTextField  = new TextField();
+    private Button submitButton             = new Button();
 
-    Rectangle sampleSwatch = new Rectangle(50,50);
+    private Text sampleText                 = new Text();
+    private Rectangle sampleSwatch          = new Rectangle(50,50);
+    private Label sampleRGB                 = new Label();
 
 
 
@@ -49,10 +51,6 @@ public class javaFX extends Application{
     public void start(Stage primaryStage) {
         NixMain nx = new NixMain();
         primaryStage.setTitle("CarChecker");
-
-        //Tile sampleTile = nx.readSampleSwatch("ye_colordata.csv");
-        //Rectangle sampleSwatch = new Rectangle(500,500);
-        //sampleSwatch.setFill(sampleTile.getColor());
 
 
         /**************HOME SCENE************************************/
@@ -95,8 +93,7 @@ public class javaFX extends Application{
         /*******************SCENE 2************************************/
         Button button2 = new Button("GO BACK");
         BorderPane border = new BorderPane();
-        Label fileLocLabel = new Label();
-        Label standardLocLabel = new Label();
+
         VBox layout2 = new VBox(20);
 
         /**************************************************************/
@@ -104,47 +101,24 @@ public class javaFX extends Application{
         submitButton.setOnAction(e -> {
             setSampleTile(sampleLocTextField.getText());
 
-            //fileLocLabel.setText(locField.getText());
-            //standardLocLabel.setText(standardField.getText());
             primaryStage.setScene(scene2);
-            //sampleTile = loadTile(locField.getText());
 
         });
-        //Text sampleText = new Text("Grease Thief");
-        //scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-
-        //Rectangle sampleSwatch = new Rectangle(50,50, sampleTile.getColor());
 
         button2.setOnAction(e -> primaryStage.setScene(homeScene));
-
-        layout2.getChildren().addAll(sampleSwatch,button2,fileLocLabel,standardLocLabel);
-        scene2 = new Scene(layout2, 600, 300);
+        sampleText.setText("Sample");
+        sampleText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        layout2.getChildren().addAll(sampleText,sampleSwatch, sampleRGB, button2);
+        border.setLeft(layout2);
+        scene2 = new Scene(border, 600, 300);
 
     }
 
     public void setSampleTile(String loc){
         sampleTile = nix.readSampleSwatch(loc);
         sampleSwatch.setFill(sampleTile.getColor());
+        sampleRGB.setText("R: "+ sampleTile.getR() + " G: " + sampleTile.getG() + " B: " + sampleTile.getB());
         System.out.println(sampleTile.getR());
-    }
-
-
-
-    public HBox addHBox() {
-        HBox hbox = new HBox();
-        hbox.setPadding(new Insets(15, 12, 15, 12));
-        hbox.setSpacing(10);
-        hbox.setStyle("-fx-background-color: #336699;");
-
-        Label sampleSwatchLabel = new Label("Sample Location:");
-        sampleSwatchLabel.setPrefSize(100,30);
-
-        TextField fileInput = new TextField("Test");
-        fileInput.setPrefSize(100,30);
-
-        hbox.getChildren().addAll(sampleSwatchLabel, fileInput);
-
-        return hbox;
     }
 
     public Tile loadTile(String loc){
