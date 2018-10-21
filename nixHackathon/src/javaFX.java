@@ -89,7 +89,6 @@ public class javaFX extends Application{
         primaryStage.setScene(homeScene);
         primaryStage.show();
 
-
         /*******************SCENE 2************************************/
         Button button2 = new Button("GO BACK");
         BorderPane border = new BorderPane();
