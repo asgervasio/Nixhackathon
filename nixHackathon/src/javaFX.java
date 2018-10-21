@@ -20,25 +20,39 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.image.SampleModel;
+import java.util.List;
 
 
 public class javaFX extends Application{
 
 
     Scene homeScene, scene2;
+    NixMain nix = new NixMain();
+    Tile sampleTile;
+    List<Tile> standardList;
+    private Text sceneTitle         = new Text();
+    Label sampleLocLable            = new Label();
+    TextField sampleLocTextField    = new TextField();
+    Label standardLocLabel          = new Label();
+    TextField standardLocTextField  = new TextField();
+    Button submitButton             = new Button();
+
+    Rectangle sampleSwatch = new Rectangle(50,50);
+
+
+
+    public static void main(String[] args){
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage) {
         NixMain nx = new NixMain();
-        primaryStage.setTitle("Grease Thief");
-        BorderPane border = new BorderPane();
-        HBox hbox = addHBox();
-        border.setTop(hbox);
+        primaryStage.setTitle("CarChecker");
 
-
-        Tile sampleTile = nx.readSampleSwatch("ye_colordata.csv");
-        Rectangle sampleSwatch = new Rectangle(500,500);
-        sampleSwatch.setFill(sampleTile.getColor());
+        //Tile sampleTile = nx.readSampleSwatch("ye_colordata.csv");
+        //Rectangle sampleSwatch = new Rectangle(500,500);
+        //sampleSwatch.setFill(sampleTile.getColor());
 
 
         /**************HOME SCENE************************************/
@@ -48,17 +62,27 @@ public class javaFX extends Application{
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        //Text scenetitle = new Text("Grease Thief");
-        //scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        //grid.add(scenetitle, 0, 0, 2, 1);
+        sceneTitle.setText("Grease Thief");
+        sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        grid.add(sceneTitle, 0, 0, 2, 1);
 
-        //Label locLabel = new Label("Sample Location:");
-        //grid.add(locLabel, 0, 1);
-        Rectangle r = new Rectangle();
-        r.setX(50);
-        r.setY(50);
-        r.setWidth(200);
-        r.setHeight(100);
+        sampleLocLable.setText("Sample Location:");
+        grid.add(sampleLocLable, 0, 1);
+
+        grid.add(sampleLocTextField, 1, 1);
+
+
+        standardLocLabel.setText("Standards:");
+        grid.add(standardLocLabel, 0, 2);
+
+        grid.add(standardLocTextField, 1, 2);
+
+        submitButton.setText("Submit");
+        HBox hbButton = new HBox(10);
+        hbButton.setAlignment(Pos.BOTTOM_RIGHT);
+        hbButton.getChildren().add(submitButton);
+        grid.add(hbButton, 1, 4);
+
 
         Scene homeScene = new Scene(grid, 300, 275);
 
@@ -70,24 +94,41 @@ public class javaFX extends Application{
 
         /*******************SCENE 2************************************/
         Button button2 = new Button("GO BACK");
+        BorderPane border = new BorderPane();
         Label fileLocLabel = new Label();
         Label standardLocLabel = new Label();
-
         VBox layout2 = new VBox(20);
-        layout2.getChildren().addAll(button2,fileLocLabel,standardLocLabel);
-        scene2 = new Scene(layout2, 600, 300);
 
         /**************************************************************/
 /*
         submitButton.setOnAction(e -> {
-            fileLocLabel.setText(locField.getText());
-            standardLocLabel.setText(standardField.getText());
+            setSampleTile(sampleLocTextField.getText());
+
+            //fileLocLabel.setText(locField.getText());
+            //standardLocLabel.setText(standardField.getText());
             primaryStage.setScene(scene2);
+            //sampleTile = loadTile(locField.getText());
+
         });
+        //Text sampleText = new Text("Grease Thief");
+        //scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+
+        //Rectangle sampleSwatch = new Rectangle(50,50, sampleTile.getColor());
 
         button2.setOnAction(e -> primaryStage.setScene(homeScene));
-*/
+
+        layout2.getChildren().addAll(sampleSwatch,button2,fileLocLabel,standardLocLabel);
+        scene2 = new Scene(layout2, 600, 300);
+
     }
+
+    public void setSampleTile(String loc){
+        sampleTile = nix.readSampleSwatch(loc);
+        sampleSwatch.setFill(sampleTile.getColor());
+        System.out.println(sampleTile.getR());
+    }
+
+
 
     public HBox addHBox() {
         HBox hbox = new HBox();
@@ -104,5 +145,15 @@ public class javaFX extends Application{
         hbox.getChildren().addAll(sampleSwatchLabel, fileInput);
 
         return hbox;
+    }
+
+    public Tile loadTile(String loc){
+        sampleTile = nix.readSampleSwatch(loc);
+        return sampleTile;
+    }
+
+    public List<Tile> loadStandards(String loc){
+        standardList = nix.loadGreaseStandards();
+        return standardList;
     }
 }

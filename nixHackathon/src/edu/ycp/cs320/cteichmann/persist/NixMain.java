@@ -47,6 +47,39 @@ public class NixMain {
         }
         return tileList;
     }
+
+    public List<Tile> loadGreaseStandards(){
+        List<Tile> tileList = new ArrayList<>();
+
+        try{
+            List<Tile> greaseList = new ArrayList<>();
+            List<String> greaseInfo = new ArrayList<>();
+            ReadGreaseCSV greaseCSV = new ReadGreaseCSV("Grease.csv");
+            for(int count = 0; count < 6; count++){
+                greaseInfo = greaseCSV.next();
+                List<String> splitString = Arrays.asList(greaseInfo.get(0).split(","));
+                int id = Integer.parseInt(splitString.get(0).replaceAll("[\\D]",""));
+                int r = Integer.parseInt(splitString.get(1).replaceAll("[\\D]",""));
+                int g = Integer.parseInt(splitString.get(2).replaceAll("[\\D]",""));
+                int b = Integer.parseInt(splitString.get(3).replaceAll("[\\D]",""));
+                String colorName = splitString.get(4);
+                String IronContent = splitString.get(5);
+                String Description = splitString.get(6);
+
+                Tile newTile = new Tile(id, r ,g, b);
+                tileList.add(newTile);
+            }
+        }
+        catch(Exception e){
+
+        }
+
+        return tileList;
+    }
+
+
+
+
     public static void main(String args[]){
         try {
             ReadCSV rcsv = new ReadCSV("ye_colordata.csv");
