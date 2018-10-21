@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Tile {
     int id, r, g, b;
+    double deltaMatch;
     String colorName, ironContent, Description;
     public Tile(int id, int r, int g, int b){
         this.id = id;
@@ -61,6 +62,11 @@ public class Tile {
                 lowestDelta = delta;
             }
         }
+        deltaMatch = lowestDelta;
         return closestTile;
+    }
+
+    public double getDeltaMatch(){
+        return deltaMatch;
     }
 }
