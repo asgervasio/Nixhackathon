@@ -42,6 +42,13 @@ public class javaFX extends Application{
     private Label sampleRGB                 = new Label();
 
 
+    private Rectangle standardSwatchWhite       = new Rectangle(50,50);
+    private Rectangle standardSwatchGrey        = new Rectangle(50,50);
+    private Rectangle standardSwatchTan         = new Rectangle(50,50);
+    private Rectangle standardSwatchBrown       = new Rectangle(50,50);
+    private Rectangle standardSwatchDarkBrown   = new Rectangle(50,50);
+    private Rectangle standardSwatchBlack       = new Rectangle(50,50);
+
 
     public static void main(String[] args){
         launch(args);
@@ -94,12 +101,14 @@ public class javaFX extends Application{
         BorderPane border = new BorderPane();
 
         VBox layout2 = new VBox(20);
+        HBox gradient = new HBox(10);
+
 
         /**************************************************************/
 
         submitButton.setOnAction(e -> {
             setSampleTile(sampleLocTextField.getText());
-
+            setStandardTile();
             primaryStage.setScene(scene2);
 
         });
@@ -108,6 +117,8 @@ public class javaFX extends Application{
         sampleText.setText("Sample");
         sampleText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         layout2.getChildren().addAll(sampleText,sampleSwatch, sampleRGB, button2);
+        gradient.getChildren().addAll(standardSwatchWhite,standardSwatchGrey,standardSwatchTan,standardSwatchBrown,standardSwatchDarkBrown,standardSwatchBlack);
+        border.setTop(gradient);
         border.setLeft(layout2);
         scene2 = new Scene(border, 600, 300);
 
@@ -116,6 +127,20 @@ public class javaFX extends Application{
     public void setSampleTile(String loc){
         sampleTile = nix.readSampleSwatch(loc);
         sampleSwatch.setFill(sampleTile.getColor());
+        sampleRGB.setText("R: "+ sampleTile.getR() + " G: " + sampleTile.getG() + " B: " + sampleTile.getB());
+        System.out.println(sampleTile.getR());
+    }
+
+    public void setStandardTile(){
+        standardList = nix.loadGreaseStandards();
+
+        standardSwatchWhite     .setFill(standardList.get(0).getColor());
+        standardSwatchGrey      .setFill(standardList.get(1).getColor());
+        standardSwatchTan       .setFill(standardList.get(2).getColor());
+        standardSwatchBrown     .setFill(standardList.get(3).getColor());
+        standardSwatchDarkBrown .setFill(standardList.get(4).getColor());
+        standardSwatchBlack     .setFill(standardList.get(5).getColor());
+
         sampleRGB.setText("R: "+ sampleTile.getR() + " G: " + sampleTile.getG() + " B: " + sampleTile.getB());
         System.out.println(sampleTile.getR());
     }
