@@ -100,7 +100,7 @@ public class javaFX extends Application{
         VBox layout2 = new VBox(20);
 
         /**************************************************************/
-/*
+
         submitButton.setOnAction(e -> {
             setSampleTile(sampleLocTextField.getText());
 
