@@ -38,9 +38,10 @@ public class javaFX extends Application{
     private Label sampleRGB                 = new Label();
     private Label matchRGB                  = new Label();
     private Label deltaMatch                = new Label();
-    private Label ironContent               = new Label();
+    private Label status                = new Label();
     private Label description               = new Label();
     private Label descriptionBody           = new Label();
+    private Label gradientLabel             = new Label();
 
 
     private Rectangle standardSwatchWhite       = new Rectangle(100,100);
@@ -63,7 +64,7 @@ public class javaFX extends Application{
 
         /**************HOME SCENE************************************/
         GridPane grid = new GridPane();
-                grid.setAlignment(Pos.CENTER);
+        grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
@@ -108,6 +109,7 @@ public class javaFX extends Application{
         Button button2 = new Button("NEW SAMPLE");
         BorderPane border = new BorderPane();
         border.setStyle("-fx-background-color: #9EEB71;");
+        VBox topVBox = new VBox(10);
         VBox leftVBox = new VBox(10);
         VBox rightVBox = new VBox(10);
         VBox centerVBox = new VBox(10);
@@ -128,8 +130,8 @@ public class javaFX extends Application{
             matchRGB.setFont(Font.font("Tahoma", FontWeight.LIGHT, 30));
             deltaMatch.setText("DeltaMatch: "    + String.valueOf(Math.round(sample.getDeltaMatch() * 100) / 10000.0));
             deltaMatch.setFont(Font.font("Tahoma", FontWeight.LIGHT, 20));
-            ironContent.setText("Iron Content: " + closest.getIronContent());
-            ironContent.setFont(Font.font("Tahoma", FontWeight.LIGHT, 20));
+            status.setText("Status: " + closest.getIronContent());
+            status.setFont(Font.font("Tahoma", FontWeight.LIGHT, 20));
             description.setText("Recommendation");
             description.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
 
@@ -144,6 +146,11 @@ public class javaFX extends Application{
 
         button2.setOnAction(e -> primaryStage.setScene(homeScene));
 
+        gradientLabel.setText("Standard Set");
+        gradientLabel.setFont(Font.font("Tahoma", FontWeight.BOLD, 30));
+        gradient.setPadding(new Insets(10,0,0,0));
+
+
 
         sampleText.setText("Sample");
         sampleText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 50));
@@ -151,14 +158,14 @@ public class javaFX extends Application{
 
         matchText.setText("Match");
         matchText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 50));
-
         gradient.getChildren().addAll(standardSwatchWhite,standardSwatchGrey,standardSwatchTan,standardSwatchBrown,standardSwatchDarkBrown,standardSwatchBlack);
+        topVBox.getChildren().addAll(gradientLabel, gradient);
         leftVBox.getChildren().addAll(sampleText,sampleSwatch, sampleRGB);
         leftVBox.setPadding(new Insets(0,20,0,20));
-        centerVBox.getChildren().addAll(deltaMatch, ironContent, description, descriptionBody, button2);
+        centerVBox.getChildren().addAll(deltaMatch, status, description, descriptionBody, button2);
         rightVBox.getChildren().addAll(matchText,matchSwatch, matchRGB);
         rightVBox.setPadding(new Insets(0,20,0,20));
-
+        topVBox.setAlignment(Pos.CENTER);
         leftVBox.setAlignment(Pos.CENTER);
         centerVBox.setAlignment(Pos.CENTER);
         rightVBox.setAlignment(Pos.CENTER);
@@ -167,7 +174,7 @@ public class javaFX extends Application{
 
 
 
-        border.setTop(gradient);
+        border.setTop(topVBox);
         border.setLeft(leftVBox);
         border.setCenter(centerVBox);
         border.setRight(rightVBox);
