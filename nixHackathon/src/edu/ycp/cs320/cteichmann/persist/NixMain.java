@@ -43,17 +43,12 @@ public class NixMain {
             }
         }
         catch(Exception e){
-
+            System.out.println("Exception Caught in ReadSampleSwatch Method");
         }
-
         return tileList;
     }
-
-
     public static void main(String args[]){
-        List<String> oString = new ArrayList<>();
         try {
-
             ReadCSV rcsv = new ReadCSV("ye_colordata.csv");
             rcsv.next();
             List<String> returnString = rcsv.next();
@@ -96,7 +91,12 @@ public class NixMain {
                 String IronContent = splitString.get(5);
                 String Description = splitString.get(6);
 
+
                 Tile newTile = new Tile(id, r ,g, b);
+                newTile.setColorName(colorName);
+                newTile.setIronContent(IronContent);
+                newTile.setDescription(Description);
+
                 tileList.add(newTile);
                 /*  //TESTING ALL PARAMETERS OF STANDARD TILES
                 System.out.println("ID: "+id);
@@ -109,16 +109,16 @@ public class NixMain {
             }
             Tile returnTile = sampleTile.compareTile(tileList);
 
-            System.out.printf("ID VALUE: ");
-            System.out.println(returnTile.getId());
-            System.out.println("RGB VALUES");
-            System.out.println(returnTile.getR());
-            System.out.println(returnTile.getG());
-            System.out.println(returnTile.getB());
+            System.out.println("#################################################");
+            System.out.println("Closest Tile");
+            System.out.println("R:"+returnTile.getR()+ " G:"+returnTile.getG()+ " B:"+returnTile.getB());
+            System.out.println("Color: "+returnTile.getColorName());
+            System.out.println("Iron Content: "+ returnTile.getIronContent());
+            System.out.println("NOTICE: "+ returnTile.getDescription());
+            System.out.println("#################################################");
         }
         catch (Exception e){
+            System.out.println("Exception Caught in ReadSampleSwatch Method");
         }
     }
-
-
 }

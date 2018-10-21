@@ -30,7 +30,7 @@ public class javaFX extends Application{
     @Override
     public void start(Stage primaryStage) {
         NixMain nx = new NixMain();
-        primaryStage.setTitle("CarChecker");
+        primaryStage.setTitle("Grease Thief");
         BorderPane border = new BorderPane();
         HBox hbox = addHBox();
         border.setTop(hbox);
@@ -48,29 +48,17 @@ public class javaFX extends Application{
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Text scenetitle = new Text("Grease Thief");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        grid.add(scenetitle, 0, 0, 2, 1);
+        //Text scenetitle = new Text("Grease Thief");
+        //scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        //grid.add(scenetitle, 0, 0, 2, 1);
 
-        Label locLabel = new Label("Sample Location:");
-        grid.add(locLabel, 0, 1);
-
-        TextField locField = new TextField();
-        grid.add(locField, 1, 1);
-
-
-        Label standardLabel = new Label("Standards:");
-        grid.add(standardLabel, 0, 2);
-
-        TextField standardField = new TextField();
-        grid.add(standardField, 1, 2);
-
-        Button submitButton = new Button("Submit");
-        HBox hbButton = new HBox(10);
-        hbButton.setAlignment(Pos.BOTTOM_RIGHT);
-        hbButton.getChildren().add(submitButton);
-        grid.add(hbButton, 1, 4);
-
+        //Label locLabel = new Label("Sample Location:");
+        //grid.add(locLabel, 0, 1);
+        Rectangle r = new Rectangle();
+        r.setX(50);
+        r.setY(50);
+        r.setWidth(200);
+        r.setHeight(100);
 
         Scene homeScene = new Scene(grid, 300, 275);
 
@@ -90,7 +78,7 @@ public class javaFX extends Application{
         scene2 = new Scene(layout2, 600, 300);
 
         /**************************************************************/
-
+/*
         submitButton.setOnAction(e -> {
             fileLocLabel.setText(locField.getText());
             standardLocLabel.setText(standardField.getText());
@@ -98,7 +86,7 @@ public class javaFX extends Application{
         });
 
         button2.setOnAction(e -> primaryStage.setScene(homeScene));
-
+*/
     }
 
     public HBox addHBox() {

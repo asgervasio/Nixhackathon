@@ -17,17 +17,9 @@ public class Tile {
         return id;
     }
 
-    public int getR(){
-        return r;
-    }
-
-    public int getG(){
-        return g;
-    }
-
-    public int getB(){
-        return b;
-    }
+    public int getR(){ return r; }
+    public int getG(){ return g; }
+    public int getB(){ return b; }
     public Color getColor(){
         return new Color(this.r/255.0,this.g/255.0,this.b/255.0, 1);
     }
@@ -69,12 +61,6 @@ public class Tile {
                 lowestDelta = delta;
             }
         }
-        System.out.println("#################################################");
-        System.out.println("Closest Tile");
-        System.out.println("R:"+closestTile.getR()+ " G:"+closestTile.getG()+ " B:"+closestTile.getB());
-        System.out.println("Percent Match:"+lowestDelta);
-        System.out.println("#################################################");
         return closestTile;
     }
-
 }
