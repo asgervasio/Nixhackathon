@@ -1,6 +1,7 @@
 import edu.ycp.hackathon.greaseThief.NixMain;
 import edu.ycp.hackathon.greaseThief.Tile;
 import javafx.application.Application;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,6 +13,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.util.List;
@@ -30,20 +32,23 @@ public class javaFX extends Application{
     private Button submitButton             = new Button();
 
     private Text sampleText                 = new Text();
-    private Rectangle sampleSwatch          = new Rectangle(50,50);
-    private Rectangle matchSwatch           = new Rectangle(50, 50);
+    private Text matchText                  = new Text();
+    private Rectangle sampleSwatch          = new Rectangle(150,150);
+    private Rectangle matchSwatch           = new Rectangle(150, 150);
     private Label sampleRGB                 = new Label();
-    private Label percentMatch              = new Label();
+    private Label matchRGB                  = new Label();
+    private Label deltaMatch                = new Label();
     private Label ironContent               = new Label();
     private Label description               = new Label();
+    private Label descriptionBody           = new Label();
 
 
-    private Rectangle standardSwatchWhite       = new Rectangle(50,50);
-    private Rectangle standardSwatchGrey        = new Rectangle(50,50);
-    private Rectangle standardSwatchTan         = new Rectangle(50,50);
-    private Rectangle standardSwatchBrown       = new Rectangle(50,50);
-    private Rectangle standardSwatchDarkBrown   = new Rectangle(50,50);
-    private Rectangle standardSwatchBlack       = new Rectangle(50,50);
+    private Rectangle standardSwatchWhite       = new Rectangle(100,100);
+    private Rectangle standardSwatchGrey        = new Rectangle(100,100);
+    private Rectangle standardSwatchTan         = new Rectangle(100,100);
+    private Rectangle standardSwatchBrown       = new Rectangle(100,100);
+    private Rectangle standardSwatchDarkBrown   = new Rectangle(100,100);
+    private Rectangle standardSwatchBlack       = new Rectangle(100,100);
 
 
     public static void main(String[] args){
@@ -64,16 +69,23 @@ public class javaFX extends Application{
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         sceneTitle.setText("Grease Thief");
-        sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 50));
+        sceneTitle.setTextAlignment(TextAlignment.CENTER);
         grid.add(sceneTitle, 0, 0, 2, 1);
+        GridPane.setHalignment(sceneTitle, HPos.CENTER);
 
-        sampleLocLable.setText("Sample Location:");
+        sampleLocLable.setText("Sample Location: ");
+        sampleLocLable.setFont(Font.font("Tahoma", FontWeight.LIGHT, 30));
         grid.add(sampleLocLable, 0, 1);
+
 
         grid.add(sampleLocTextField, 1, 1);
 
 
-        standardLocLabel.setText("Standards:");
+        standardLocLabel.setText("Standards: ");
+        standardLocLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 30));
+        GridPane.setHalignment(standardLocLabel, HPos.RIGHT);
+
         grid.add(standardLocLabel, 0, 2);
 
         grid.add(standardLocTextField, 1, 2);
@@ -85,7 +97,7 @@ public class javaFX extends Application{
         grid.add(hbButton, 1, 4);
 
 
-        Scene homeScene = new Scene(grid, 300, 275);
+        Scene homeScene = new Scene(grid, 1500, 750);
 
         /*****************************************************/
 
@@ -93,15 +105,16 @@ public class javaFX extends Application{
         primaryStage.show();
 
         /*******************SCENE 2************************************/
-        Button button2 = new Button("GO BACK");
+        Button button2 = new Button("NEW SAMPLE");
         BorderPane border = new BorderPane();
         border.setStyle("-fx-background-color: #9EEB71;");
-        VBox leftVBox = new VBox(20);
+        VBox leftVBox = new VBox(10);
+        VBox rightVBox = new VBox(10);
+        VBox centerVBox = new VBox(10);
         HBox gradient = new HBox(10);
         gradient.setAlignment(Pos.CENTER);
-        gradient.setPadding(new Insets(25,0,10,0));
+        gradient.setPadding(new Insets(20,0,0,0));
 
-        VBox rightVBox = new VBox(20);
 
 
         /**************************************************************/
@@ -111,27 +124,62 @@ public class javaFX extends Application{
             List<Tile> standards = setStandardTile(standardLocTextField.getText());
             Tile closest = sample.compareTile(standards);
             matchSwatch.setFill(closest.getColor());
+            matchRGB.setText("R: "+ closest.getR() + " G: " + closest.getG() + " B: " + closest.getB());
+            matchRGB.setFont(Font.font("Tahoma", FontWeight.LIGHT, 30));
+            deltaMatch.setText("DeltaMatch: "    + String.valueOf(Math.round(sample.getDeltaMatch() * 100) / 10000.0));
+            deltaMatch.setFont(Font.font("Tahoma", FontWeight.LIGHT, 20));
+            ironContent.setText("Iron Content: " + closest.getIronContent());
+            ironContent.setFont(Font.font("Tahoma", FontWeight.LIGHT, 20));
+            description.setText("Recommendation");
+            description.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
 
+            descriptionBody.setText(closest.getDescription());
+            descriptionBody.setFont(Font.font("Tahoma", FontWeight.LIGHT, 20));
+            descriptionBody.setWrapText(true);
+            descriptionBody.setTextAlignment(TextAlignment.CENTER);
+            description.setAlignment(Pos.CENTER);
             primaryStage.setScene(scene2);
 
         });
 
         button2.setOnAction(e -> primaryStage.setScene(homeScene));
+
+
         sampleText.setText("Sample");
-        sampleText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        leftVBox.getChildren().addAll(sampleText,sampleSwatch, sampleRGB, button2);
+        sampleText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 50));
+
+
+        matchText.setText("Match");
+        matchText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 50));
+
         gradient.getChildren().addAll(standardSwatchWhite,standardSwatchGrey,standardSwatchTan,standardSwatchBrown,standardSwatchDarkBrown,standardSwatchBlack);
-        rightVBox.getChildren().add(matchSwatch);
+        leftVBox.getChildren().addAll(sampleText,sampleSwatch, sampleRGB);
+        leftVBox.setPadding(new Insets(0,20,0,20));
+        centerVBox.getChildren().addAll(deltaMatch, ironContent, description, descriptionBody, button2);
+        rightVBox.getChildren().addAll(matchText,matchSwatch, matchRGB);
+        rightVBox.setPadding(new Insets(0,20,0,20));
+
+        leftVBox.setAlignment(Pos.CENTER);
+        centerVBox.setAlignment(Pos.CENTER);
+        rightVBox.setAlignment(Pos.CENTER);
+
+        centerVBox.setMaxWidth(500);
+
+
+
         border.setTop(gradient);
         border.setLeft(leftVBox);
+        border.setCenter(centerVBox);
         border.setRight(rightVBox);
-        scene2 = new Scene(border, 600, 300);
+        scene2 = new Scene(border, 1500, 750);
     }
 
     public Tile setSampleTile(String loc){
         sampleTile = nix.readSampleSwatch(loc);
         sampleSwatch.setFill(sampleTile.getColor());
         sampleRGB.setText("R: "+ sampleTile.getR() + " G: " + sampleTile.getG() + " B: " + sampleTile.getB());
+        sampleRGB.setFont(Font.font("Tahoma", FontWeight.LIGHT, 30));
+
         return sampleTile;
     }
 

@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96eb96f3-89a3-4c85-b8d7-c967fd277949" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/NixMain.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/ReadCSV.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/ReadGreaseCSV.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/ReadTileCSV.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/SwingDemo$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/SwingDemo$ButtonClickListener.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/SwingDemo.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/Tile.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/res/Grease.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/res/Tiles.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/edu/ycp/cs320/cteichmann/persist/res/ye_colordata.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/nixHackathon/javaFX.class" afterPath="$PROJECT_DIR$/out/production/nixHackathon/javaFX.class" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/NixMain.java" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/ReadCSV.java" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/ReadCSV.java" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/ReadGreaseCSV.java" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/ReadGreaseCSV.java" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/ReadTileCSV.java" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/ReadTileCSV.java" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/SwingDemo.java" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/SwingDemo.java" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/Tile.java" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/res/Grease.csv" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Grease.csv" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/res/Tiles.csv" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/Tiles.csv" />
-      <change beforePath="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/res/ye_colordata.csv" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/res/ye_colordata.csv" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java" />
+      <change beforePath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java" afterPath="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java" />
       <change beforePath="$PROJECT_DIR$/src/javaFX.java" afterPath="$PROJECT_DIR$/src/javaFX.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -74,10 +54,24 @@
       <file leaf-file-name="javaFX.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javaFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="126" column="35" lean-forward="true" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
+            <state relative-caret-position="773">
+              <caret line="151" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1827#1828#0" expanded="true" />
+                <element signature="e#1860#1861#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,8 +90,8 @@
       <file leaf-file-name="NixMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="55" column="56" lean-forward="true" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
+            <state relative-caret-position="725">
+              <caret line="71" column="50" lean-forward="false" selection-start-line="71" selection-start-column="50" selection-end-line="71" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,10 +102,10 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2875">
-              <caret line="115" column="20" lean-forward="false" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+            <state relative-caret-position="2725">
+              <caret line="109" column="20" lean-forward="false" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
               <folding>
-                <marker date="1540089840218" expanded="true" signature="36373:36430" ph="..." />
+                <marker date="1540099140676" expanded="true" signature="34242:34299" ph="..." />
               </folding>
             </state>
           </provider>
@@ -152,14 +146,15 @@
         <option value="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/Tile.java" />
         <option value="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/ReadGreaseCSV.java" />
         <option value="$PROJECT_DIR$/src/edu/ycp/cs320/cteichmann/persist/NixMain.java" />
+        <option value="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java" />
         <option value="$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java" />
         <option value="$PROJECT_DIR$/src/javaFX.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="422" />
-    <option name="y" value="-25" />
+    <option name="x" value="-238" />
+    <option name="y" value="-21" />
     <option name="width" value="1704" />
     <option name="height" value="1104" />
   </component>
@@ -506,7 +501,7 @@
         <state relative-caret-position="1775">
           <caret line="71" column="20" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
           <folding>
-            <marker date="1540089840218" expanded="true" signature="36373:36430" ph="..." />
+            <marker date="1540099140676" expanded="true" signature="34242:34299" ph="..." />
           </folding>
         </state>
       </provider>
@@ -556,25 +551,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="63" column="27" lean-forward="false" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#371#372#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2875">
-          <caret line="115" column="20" lean-forward="false" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+        <state relative-caret-position="2725">
+          <caret line="109" column="20" lean-forward="false" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
           <folding>
-            <marker date="1540089840218" expanded="true" signature="36373:36430" ph="..." />
+            <marker date="1540099140676" expanded="true" signature="34242:34299" ph="..." />
           </folding>
         </state>
       </provider>
@@ -587,10 +569,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1827#1828#0" expanded="true" />
+            <element signature="e#1860#1861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ycp/hackathon/greaseThief/NixMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="55" column="56" lean-forward="true" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
+        <state relative-caret-position="725">
+          <caret line="71" column="50" lean-forward="false" selection-start-line="71" selection-start-column="50" selection-end-line="71" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -599,8 +593,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="126" column="35" lean-forward="true" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
+        <state relative-caret-position="773">
+          <caret line="151" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

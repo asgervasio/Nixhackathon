@@ -67,6 +67,9 @@ public class NixMain {
                 String Description = splitString.get(6);
 
                 Tile newTile = new Tile(id, r ,g, b);
+                newTile.setColorName(colorName);
+                newTile.setIronContent(IronContent);
+                newTile.setDescription(Description);
                 tileList.add(newTile);
             }
         }
