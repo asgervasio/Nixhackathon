@@ -1,19 +1,15 @@
-package edu.ycp.cs320.cteichmann.persist;
+package edu.ycp.hackathon.greaseThief;
 
-import java.io.BufferedReader;
-import java.io.Closeable;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class ReadTileCSV implements Closeable {
+public class ReadGreaseCSV implements Closeable {
     private BufferedReader reader;
 
-    public ReadTileCSV(String resourceName) throws IOException {
-        InputStream in = this.getClass().getClassLoader().getResourceAsStream("edu/ycp/cs320/cteichmann/persist/res/" + resourceName);
+    public ReadGreaseCSV(String resourceName) throws IOException {
+        InputStream in = this.getClass().getClassLoader().getResourceAsStream("edu/ycp/hackathon/greaseThief/res/" + resourceName);
 
         if (in == null) {
             throw new IOException("Couldn't open " + resourceName);
@@ -33,7 +29,6 @@ public class ReadTileCSV implements Closeable {
         }
         return tuple;
     }
-
     public void close() throws IOException {
         reader.close();
     }

@@ -1,4 +1,4 @@
-package edu.ycp.cs320.cteichmann.persist;
+package edu.ycp.hackathon.greaseThief;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
@@ -13,7 +13,7 @@ public class ReadCSV implements Closeable {
 	private BufferedReader reader;
 	
 	public ReadCSV(String resourceName) throws IOException {
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream("edu/ycp/cs320/cteichmann/persist/res/" + resourceName);
+		InputStream in = this.getClass().getClassLoader().getResourceAsStream("edu/ycp/hackathon/greaseThief/res/" + resourceName);
 		
 		if (in == null) {
 			throw new IOException("Couldn't open " + resourceName);

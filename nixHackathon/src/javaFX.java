@@ -1,25 +1,19 @@
-import edu.ycp.cs320.cteichmann.persist.NixMain;
-import edu.ycp.cs320.cteichmann.persist.Tile;
+import edu.ycp.hackathon.greaseThief.NixMain;
+import edu.ycp.hackathon.greaseThief.Tile;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.awt.image.SampleModel;
 import java.util.List;
 
 
@@ -37,7 +31,11 @@ public class javaFX extends Application{
 
     private Text sampleText                 = new Text();
     private Rectangle sampleSwatch          = new Rectangle(50,50);
+    private Rectangle matchSwatch           = new Rectangle(50, 50);
     private Label sampleRGB                 = new Label();
+    private Label percentMatch              = new Label();
+    private Label ironContent               = new Label();
+    private Label description               = new Label();
 
 
     private Rectangle standardSwatchWhite       = new Rectangle(50,50);
@@ -98,17 +96,22 @@ public class javaFX extends Application{
         Button button2 = new Button("GO BACK");
         BorderPane border = new BorderPane();
         border.setStyle("-fx-background-color: #9EEB71;");
-        VBox layout2 = new VBox(20);
+        VBox leftVBox = new VBox(20);
         HBox gradient = new HBox(10);
         gradient.setAlignment(Pos.CENTER);
         gradient.setPadding(new Insets(25,0,10,0));
+
+        VBox rightVBox = new VBox(20);
 
 
         /**************************************************************/
 
         submitButton.setOnAction(e -> {
-            setSampleTile(sampleLocTextField.getText());
-            setStandardTile();
+            Tile sample = setSampleTile(sampleLocTextField.getText());
+            List<Tile> standards = setStandardTile(standardLocTextField.getText());
+            Tile closest = sample.compareTile(standards);
+            matchSwatch.setFill(closest.getColor());
+
             primaryStage.setScene(scene2);
 
         });
@@ -116,21 +119,24 @@ public class javaFX extends Application{
         button2.setOnAction(e -> primaryStage.setScene(homeScene));
         sampleText.setText("Sample");
         sampleText.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        layout2.getChildren().addAll(sampleText,sampleSwatch, sampleRGB, button2);
+        leftVBox.getChildren().addAll(sampleText,sampleSwatch, sampleRGB, button2);
         gradient.getChildren().addAll(standardSwatchWhite,standardSwatchGrey,standardSwatchTan,standardSwatchBrown,standardSwatchDarkBrown,standardSwatchBlack);
+        rightVBox.getChildren().add(matchSwatch);
         border.setTop(gradient);
-        border.setLeft(layout2);
+        border.setLeft(leftVBox);
+        border.setRight(rightVBox);
         scene2 = new Scene(border, 600, 300);
     }
 
-    public void setSampleTile(String loc){
+    public Tile setSampleTile(String loc){
         sampleTile = nix.readSampleSwatch(loc);
         sampleSwatch.setFill(sampleTile.getColor());
         sampleRGB.setText("R: "+ sampleTile.getR() + " G: " + sampleTile.getG() + " B: " + sampleTile.getB());
+        return sampleTile;
     }
 
-    public void setStandardTile(){
-        standardList = nix.loadGreaseStandards();
+    public List<Tile> setStandardTile(String loc){
+        standardList = nix.loadGreaseStandards(loc);
 
         standardSwatchWhite     .setFill(standardList.get(0).getColor());
         standardSwatchGrey      .setFill(standardList.get(1).getColor());
@@ -138,15 +144,8 @@ public class javaFX extends Application{
         standardSwatchBrown     .setFill(standardList.get(3).getColor());
         standardSwatchDarkBrown .setFill(standardList.get(4).getColor());
         standardSwatchBlack     .setFill(standardList.get(5).getColor());
-    }
 
-    public Tile loadTile(String loc){
-        sampleTile = nix.readSampleSwatch(loc);
-        return sampleTile;
-    }
-
-    public List<Tile> loadStandards(String loc){
-        standardList = nix.loadGreaseStandards();
         return standardList;
     }
+
 }

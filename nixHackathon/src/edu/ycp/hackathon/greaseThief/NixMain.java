@@ -1,4 +1,4 @@
-package edu.ycp.cs320.cteichmann.persist;
+package edu.ycp.hackathon.greaseThief;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,13 +48,13 @@ public class NixMain {
         return tileList;
     }
 
-    public List<Tile> loadGreaseStandards(){
+    public List<Tile> loadGreaseStandards(String loc){
         List<Tile> tileList = new ArrayList<>();
 
         try{
             List<Tile> greaseList = new ArrayList<>();
             List<String> greaseInfo = new ArrayList<>();
-            ReadGreaseCSV greaseCSV = new ReadGreaseCSV("Grease.csv");
+            ReadGreaseCSV greaseCSV = new ReadGreaseCSV(loc);
             for(int count = 0; count < 6; count++){
                 greaseInfo = greaseCSV.next();
                 List<String> splitString = Arrays.asList(greaseInfo.get(0).split(","));
