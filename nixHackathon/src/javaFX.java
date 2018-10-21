@@ -29,6 +29,7 @@ public class javaFX extends Application{
     Scene homeScene, scene2;
     NixMain nix = new NixMain();
     Tile sampleTile;
+    Tile standardTile;
     List<Tile> standardList;
     private Text sceneTitle         = new Text();
     Label sampleLocLable            = new Label();
@@ -38,6 +39,12 @@ public class javaFX extends Application{
     Button submitButton             = new Button();
 
     Rectangle sampleSwatch = new Rectangle(50,50);
+    Rectangle standardSwatchWhite = new Rectangle(50,50);
+    Rectangle standardSwatchGrey = new Rectangle(50,50);
+    Rectangle standardSwatchTan = new Rectangle(50,50);
+    Rectangle standardSwatchBrown = new Rectangle(50,50);
+    Rectangle standardSwatchDarkBrown = new Rectangle(50,50);
+    Rectangle standardSwatchBlack = new Rectangle(50,50);
 
 
 
@@ -48,13 +55,7 @@ public class javaFX extends Application{
     @Override
     public void start(Stage primaryStage) {
         NixMain nx = new NixMain();
-        primaryStage.setTitle("CarChecker");
-
-        //Tile sampleTile = nx.readSampleSwatch("ye_colordata.csv");
-        //Rectangle sampleSwatch = new Rectangle(500,500);
-        //sampleSwatch.setFill(sampleTile.getColor());
-
-
+        primaryStage.setTitle("Grease Thief");
         /**************HOME SCENE************************************/
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -98,27 +99,20 @@ public class javaFX extends Application{
         Label fileLocLabel = new Label();
         Label standardLocLabel = new Label();
         VBox layout2 = new VBox(20);
+        HBox bar = new HBox(10);
 
         /**************************************************************/
 
         submitButton.setOnAction(e -> {
             setSampleTile(sampleLocTextField.getText());
-
-            //fileLocLabel.setText(locField.getText());
-            //standardLocLabel.setText(standardField.getText());
+            setStandardTile(standardLocTextField.getText());
             primaryStage.setScene(scene2);
-            //sampleTile = loadTile(locField.getText());
-
         });
-        //Text sampleText = new Text("Grease Thief");
-        //scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-
-        //Rectangle sampleSwatch = new Rectangle(50,50, sampleTile.getColor());
 
         button2.setOnAction(e -> primaryStage.setScene(homeScene));
-
         layout2.getChildren().addAll(sampleSwatch,button2,fileLocLabel,standardLocLabel);
-        scene2 = new Scene(layout2, 600, 300);
+        bar.getChildren().addAll(standardSwatchWhite, standardSwatchGrey, standardSwatchTan, standardSwatchBrown, standardSwatchDarkBrown, standardSwatchBlack);
+        scene2 = new Scene(bar, 600, 300);
 
     }
 
@@ -127,27 +121,22 @@ public class javaFX extends Application{
         sampleSwatch.setFill(sampleTile.getColor());
         System.out.println(sampleTile.getR());
     }
-
-
-
-    public HBox addHBox() {
-        HBox hbox = new HBox();
-        hbox.setPadding(new Insets(15, 12, 15, 12));
-        hbox.setSpacing(10);
-        hbox.setStyle("-fx-background-color: #336699;");
-
-        Label sampleSwatchLabel = new Label("Sample Location:");
-        sampleSwatchLabel.setPrefSize(100,30);
-
-        TextField fileInput = new TextField("Test");
-        fileInput.setPrefSize(100,30);
-
-        hbox.getChildren().addAll(sampleSwatchLabel, fileInput);
-
-        return hbox;
+    public void setStandardTile(String loc){
+        standardTile = nix.loadGreaseStandards().get(0);
+        standardSwatchWhite.setFill(standardTile.getColor());
+        System.out.println(standardTile.getR());
+        standardTile = nix.loadGreaseStandards().get(1);
+        standardSwatchGrey.setFill(standardTile.getColor());
+        standardTile = nix.loadGreaseStandards().get(2);
+        standardSwatchTan.setFill(standardTile.getColor());
+        standardTile = nix.loadGreaseStandards().get(3);
+        standardSwatchBrown.setFill(standardTile.getColor());
+        standardTile = nix.loadGreaseStandards().get(4);
+        standardSwatchDarkBrown.setFill(standardTile.getColor());
+        standardTile = nix.loadGreaseStandards().get(5);
+        standardSwatchBlack.setFill(standardTile.getColor());
     }
-
-    public Tile loadTile(String loc){
+        public Tile loadTile(String loc){
         sampleTile = nix.readSampleSwatch(loc);
         return sampleTile;
     }
